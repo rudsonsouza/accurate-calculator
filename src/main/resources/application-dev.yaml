@@ -1,0 +1,38 @@
+server:
+  port: 8761
+
+accurate:
+  calculatorRegistry:
+    username: calculatorregistry
+    password: 'accurate'
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: 'http://${accurate.calculatorRegistry.username}:${accurate.calculatorRegistry.password}@localhost:8761/eureka'
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/accurate-calculator-db
+    username: postgres
+    password: accurate
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob.non-contextual-creation: true
+    properties:
+      hibernate:
+        show_sql: true
+  output:
+    ansi:
+      enable: Always
+logging:
+  level:
+    com.accurate: TRACE
+    root: INFO
+    org.springframework.web: DEBUG
+    org.hibernate: INFO
