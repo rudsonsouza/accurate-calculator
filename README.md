@@ -1,2 +1,0 @@
-# accurate-calculator
-Accurate Calculator 
