@@ -1,26 +1,5 @@
-server:
-  port: 8087
-
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5433/accurate-calculator-db
-    username: postgres
-    password: accurate
-  jpa:
-    hibernate:
-      ddl-auto: update
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-      jdbc:
-        lob.non-contextual-creation: true
-    properties:
-      hibernate:
-        show_sql: true
-  output:
-    ansi:
-      enable: Always
-logging:
-  level:
-    com.accurate: TRACE
-    root: INFO
-    org.springframework.web: DEBUG
-    org.hibernate: INFO
+  profiles:
+    active: prod
+  application:
+    name: accurate-calculator-registry
