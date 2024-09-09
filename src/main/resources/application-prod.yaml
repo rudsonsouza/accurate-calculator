@@ -1,0 +1,17 @@
+server:
+  port: ${PORT}
+
+accurate:
+  calculatorRegistry:
+    username: ${ACCURATE_USERNAME}
+    password: ${ACCURATE_PASSWORD}
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: ${ACCURATE_URL}
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    non-secure-port: 80
